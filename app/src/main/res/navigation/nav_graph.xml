@@ -17,11 +17,12 @@
         android:label="RegularFeatureFragment"
         tools:layout="@layout/fragment_regular_feature" />
 
+    <!-- Mitigasi kenapa jika moduleName diberikan dynamic feature tidak bekerja  -->
+    <!-- app:moduleName="Hilt_Example.dynamic_feature"
+        tools:layout="@layout/fragment_dynamic_feature" -->
     <fragment
         android:id="@+id/dynamicFeatureFragment"
         android:name="com.indramahkota.dynamic_feature.DynamicFeatureFragment"
-        android:label="DynamicFeatureFragment"
-        app:moduleName="Hilt_Example.dynamic_feature"
-        tools:layout="@layout/fragment_dynamic_feature" />
+        android:label="DynamicFeatureFragment" />
 
 </navigation>
