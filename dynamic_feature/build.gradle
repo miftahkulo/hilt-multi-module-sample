@@ -46,15 +46,6 @@ dependencies {
     implementation project(":data")
     implementation project(":domain")
 
-    // KTX
-    implementation Libs.AndroidX.Fragment.fragmentKtx
-    implementation Libs.AndroidX.Activity.activityKtx
-
-    // Common Libs
-    implementation Libs.Android.material
-    implementation Libs.AndroidX.appcompat
-    implementation Libs.AndroidX.Constraint.constraintLayout
-
     // Hilt
     implementation Libs.Dagger.hiltAndroid
     kapt Libs.Dagger.hiltAndroidCompiler

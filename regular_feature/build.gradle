@@ -54,11 +54,6 @@ dependencies {
     implementation project(":data")
     implementation project(":domain")
 
-    // Common Libs
-    implementation Libs.Android.material
-    implementation Libs.AndroidX.appcompat
-    implementation Libs.AndroidX.Constraint.constraintLayout
-
     // Hilt
     implementation Libs.Dagger.hiltAndroid
     kapt Libs.Dagger.hiltAndroidCompiler
