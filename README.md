@@ -5,15 +5,18 @@
 ## Structure
 ```
 - hilt-multi-module-sample
-    - buildSrc
+    - buildSrc (Kotlin Library)
         - dependencies
-    - app
-        - app (UI / Main)
-        - data
-        - domain
-        - common
-    - dynamic_feature
-    - regular_feature
+    - app (Android Application)
+        - UI / Main
+    - data (Android Library)
+        - Data Source
+    - domain (Android Library)
+        - Model
+    - common (Android Library)
+        - Shared Resource
+    - dynamic_feature (Android Dynamic Feature)
+    - regular_feature (Android Library)
 ```
 
 ## How To Use 🔧
