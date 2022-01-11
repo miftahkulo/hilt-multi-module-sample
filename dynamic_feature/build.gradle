@@ -46,6 +46,10 @@ dependencies {
     implementation project(":data")
     implementation project(":domain")
 
+    // KTX
+    implementation Libs.AndroidX.Fragment.fragmentKtx
+    implementation Libs.AndroidX.Activity.activityKtx
+
     // Common Libs
     implementation Libs.Android.material
     implementation Libs.AndroidX.appcompat

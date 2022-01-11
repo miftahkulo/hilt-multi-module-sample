@@ -6,7 +6,12 @@ import com.indramahkota.hiltexample.di.DynamicFeatureDependencies
 import dagger.BindsInstance
 import dagger.Component
 
-@Component(dependencies = [DynamicFeatureDependencies::class])
+@Component(
+    dependencies = [DynamicFeatureDependencies::class],
+    modules = [
+        DynamicFeatureModule::class
+    ]
+)
 interface DynamicFeatureComponent {
     @Component.Factory
     interface Factory {

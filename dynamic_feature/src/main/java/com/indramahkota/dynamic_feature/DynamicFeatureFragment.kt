@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.indramahkota.common.base.BaseBindingFragment
 import com.indramahkota.domain.SampleRepository
 import com.indramahkota.dynamic_feature.databinding.FragmentDynamicFeatureBinding
@@ -18,6 +19,12 @@ class DynamicFeatureFragment : BaseBindingFragment() {
     @Inject
     lateinit var repository: SampleRepository
 
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private val viewModel: DynamicFeatureViewModel by lazy {
+        ViewModelProvider(this, viewModelFactory)[DynamicFeatureViewModel::class.java]
+    }
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         inject()
@@ -29,7 +36,11 @@ class DynamicFeatureFragment : BaseBindingFragment() {
     }
 
     override fun setupUI(view: View, savedInstanceState: Bundle?) {
-        Log.d("LOGGING", "Dynamic Feature: ${repository.getMessage()}")
+        Log.d("LOGGING", "Dynamic Feature by Direct Inject: ${repository.getMessage()}")
+        Log.d(
+            "LOGGING",
+            "Dynamic Feature by ViewModel Inject: ${viewModel.getMessage()}"
+        )
     }
 
     override fun unbindFragment() {

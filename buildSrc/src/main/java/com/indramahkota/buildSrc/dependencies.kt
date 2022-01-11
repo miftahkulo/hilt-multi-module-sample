@@ -32,7 +32,14 @@ object Libs {
         const val coreKtx = "androidx.core:core-ktx:1.7.0"
 
         object Activity {
+            const val version = "1.4.0"
             const val activityCompose = "androidx.activity:activity-compose:1.4.0"
+            const val activityKtx = "androidx.activity:activity-ktx:$version"
+        }
+
+        object Fragment {
+            const val version = "1.4.0"
+            const val fragmentKtx = "androidx.fragment:fragment-ktx:$version"
         }
 
         object Constraint {
