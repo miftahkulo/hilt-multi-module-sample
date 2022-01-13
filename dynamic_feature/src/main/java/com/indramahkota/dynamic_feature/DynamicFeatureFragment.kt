@@ -2,7 +2,6 @@ package com.indramahkota.dynamic_feature
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.indramahkota.common.base.BaseBindingFragment
 import com.indramahkota.domain.SampleRepository
 import com.indramahkota.dynamic_feature.databinding.FragmentDynamicFeatureBinding
+import timber.log.Timber
 import javax.inject.Inject
 
 class DynamicFeatureFragment : BaseBindingFragment() {
@@ -36,11 +36,8 @@ class DynamicFeatureFragment : BaseBindingFragment() {
     }
 
     override fun setupUI(view: View, savedInstanceState: Bundle?) {
-        Log.d("LOGGING", "Dynamic Feature by Direct Inject: ${repository.getMessage()}")
-        Log.d(
-            "LOGGING",
-            "Dynamic Feature by ViewModel Inject: ${viewModel.getMessage()}"
-        )
+        Timber.d("Dynamic Feature by Direct Inject: ${repository.getMessage()}")
+        Timber.d("Dynamic Feature by ViewModel Inject: ${viewModel.getMessage()}")
     }
 
     override fun unbindFragment() {

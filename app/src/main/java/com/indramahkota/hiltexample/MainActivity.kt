@@ -1,7 +1,6 @@
 package com.indramahkota.hiltexample
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -9,6 +8,7 @@ import com.indramahkota.common.base.BaseBindingActivity
 import com.indramahkota.domain.SampleRepository
 import com.indramahkota.hiltexample.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -26,7 +26,7 @@ class MainActivity : BaseBindingActivity() {
     }
 
     override fun setupUI(savedInstanceState: Bundle?) {
-        Log.d("LOGGING", "Main: ${repository.getMessage()}")
+        Timber.d("Main: ${repository.getMessage()}")
 
         with(binding) {
             val navHostFragment = supportFragmentManager.findFragmentById(
