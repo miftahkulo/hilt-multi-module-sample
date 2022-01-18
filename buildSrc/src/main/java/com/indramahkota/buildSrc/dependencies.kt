@@ -91,13 +91,14 @@ object Libs {
             private const val version = "1.4.0"
             const val core = "androidx.test:core:$version"
             const val rules = "androidx.test:rules:$version"
+            const val coreTesting = "androidx.arch.core:core-testing:2.1.0"
 
             object Ext {
-                private const val version = "1.1.2"
+                private const val version = "1.1.3"
                 const val junit = "androidx.test.ext:junit-ktx:$version"
             }
 
-            const val espressoCore = "androidx.test.espresso:espresso-core:3.2.0"
+            const val espressoCore = "androidx.test.espresso:espresso-core:3.4.0"
         }
 
         object Room {
@@ -105,6 +106,11 @@ object Libs {
             const val runtime = "androidx.room:room-runtime:$version"
             const val ktx = "androidx.room:room-ktx:$version"
             const val compiler = "androidx.room:room-compiler:$version"
+        }
+
+        object SQLiteKtx {
+            private const val version = "2.2.0"
+            const val sqliteKtx = "androidx.sqlite:sqlite-ktx:$version"
         }
     }
 
@@ -152,8 +158,24 @@ object Libs {
         const val shimmer = "com.facebook.shimmer:shimmer:$version"
     }
 
+    object LeakCanary {
+        private const val version = "2.6"
+        const val leakcanary = "com.squareup.leakcanary:leakcanary-android:$version"
+    }
+
+    object SqlCipher {
+        private const val version = "4.4.0"
+        const val sqlcipher = "net.zetetic:android-database-sqlcipher:$version"
+    }
+
     object JUnit {
         private const val version = "4.13.2"
         const val junit = "junit:junit:$version"
+    }
+
+    object Mockito {
+        private const val version = "4.2.0"
+        const val core = "org.mockito:mockito-core:$version"
+        const val inline = "org.mockito:mockito-inline:$version"
     }
 }

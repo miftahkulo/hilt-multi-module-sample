@@ -24,20 +24,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
 }
 
 dependencies {
-    // KTX
+    // Core KTX
     api Libs.AndroidX.coreKtx
-    implementation Libs.AndroidX.Fragment.fragmentKtx
-    implementation Libs.AndroidX.Activity.activityKtx
 
     // Coroutines
     api Libs.Coroutines.core
@@ -48,6 +48,24 @@ dependencies {
     api Libs.AndroidX.appcompat
     api Libs.AndroidX.Constraint.constraintLayout
 
+    // Navigation Component
+    api Libs.AndroidX.Navigation.ui
+    api Libs.AndroidX.Navigation.fragment
+    api Libs.AndroidX.Navigation.dynamicFeaturesFragment
+
     // Timber
     api Libs.Timber.timber
+
+    // Test
+    testImplementation Libs.JUnit.junit
+    testImplementation Libs.AndroidX.Test.coreTesting
+
+    androidTestImplementation Libs.AndroidX.Test.core
+    androidTestImplementation Libs.AndroidX.Test.rules
+    androidTestImplementation Libs.AndroidX.Test.Ext.junit
+    androidTestImplementation Libs.AndroidX.Test.espressoCore
+
+    // Mockito
+    testImplementation Libs.Mockito.core
+    testImplementation Libs.Mockito.inline
 }

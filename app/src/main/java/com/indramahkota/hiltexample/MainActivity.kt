@@ -2,8 +2,6 @@ package com.indramahkota.hiltexample
 
 import android.os.Bundle
 import android.view.View
-import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
 import com.indramahkota.common.base.BaseBindingActivity
 import com.indramahkota.domain.SampleRepository
 import com.indramahkota.hiltexample.databinding.ActivityMainBinding
@@ -18,34 +16,12 @@ class MainActivity : BaseBindingActivity() {
     @Inject
     lateinit var repository: SampleRepository
 
-    private lateinit var navController: NavController
-
     override fun setLayout(): View {
         binding = ActivityMainBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun setupUI(savedInstanceState: Bundle?) {
-        Timber.d("Main: ${repository.getMessage()}")
-
-        with(binding) {
-            val navHostFragment = supportFragmentManager.findFragmentById(
-                navHostContainer.id
-            ) as NavHostFragment
-
-            navController = navHostFragment.navController
-
-            btnAppFeature.setOnClickListener {
-                navController.navigate(R.id.homeFragment)
-            }
-
-            btnRegularFeature.setOnClickListener {
-                navController.navigate(R.id.regularFeatureFragment)
-            }
-
-            btnDynamicFeature.setOnClickListener {
-                navController.navigate(R.id.dynamicFeatureFragment)
-            }
-        }
+        Timber.d("Sample repository address: $repository")
     }
 }
